@@ -1,0 +1,1266 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    /*background-color:#5499F8;*/
+}
+
+.container1280{
+    width: 1280px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.elastico {
+    width: 100%;
+    display: block; /*para que cubra todo el ancho de la pantalla*/
+}
+
+.fijo {
+    width: 1080px;
+    margin: auto;
+    position: relative;
+    /*PARA PODER COLOCAR IMAGENES SOBRE LOS CONTENEDORES*/
+}
+
+/*LOADING*/
+
+#loading {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+  }
+  #body-loader {
+    overflow: hidden;
+    background-color: rgb(18, 177, 240);
+  }
+  .carg{
+    margin-top: 100px;
+  }
+  #loader {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  #loader div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: end;
+    gap: 1.8rem;
+  }
+  #loader img {
+    width: 200px;
+    height: 200px;
+    animation: escalar 2s infinite;
+    -webkit-animation:;
+}
+
+@keyframes escalar {
+    0% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+      -moz-transform: scale(1.0);
+      -ms-transform: scale(1.0);
+      -o-transform: scale(1.0);
+      
+}
+    50% {
+      transform: scale(1.8);
+      -webkit-transform: scale(1.8);
+      -moz-transform: scale(1.8);
+      -ms-transform: scale(1.8);
+      -o-transform: scale(1.8);
+}
+    100% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+      -moz-transform: scale(1.0);
+      -ms-transform: scale(1.0);
+      -o-transform: scale(1.0);
+}
+  }
+  
+
+
+
+
+
+
+  #loader p {
+    font-style: italic;
+    font-family: cursive;
+    color: #191464;
+    font-size: 30px;
+    content: "";
+  }
+  
+  #loader p::after {
+    position: absolute;
+    content: "";
+    animation: cargando 1.2s linear infinite;
+    -webkit-animation: cargando 1.2s linear infinite;
+}
+  
+  #loader .percent {
+    position: absolute;
+    right: 48.5%;
+    top: 80.8%;
+    font-style: italic;
+    font-family: cursive;
+    font-size: 20px;
+    color: #101aa3;
+    width: min-content;
+  }
+  
+  
+  @keyframes cargando {
+    0% {
+      content: ".";
+      opacity: 0;
+    }
+    60% {
+      content: "..";
+    }
+    100% {
+      content: "...";
+  
+      opacity: 1;
+   }
+  }
+
+/*HEADER*/
+
+.contenedorHeader{
+    width: 100%;
+    background-color: #5499F9;
+    z-index: 50;
+}
+
+header {
+    width: 1280px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #5499F9;
+    z-index: 8;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0px 0px 0px 8%;
+    padding: 0px;
+    border: 0px;
+
+}
+
+.barritaMenu {
+    height: 4px;
+    width: 34px;
+    margin: 1px;
+    background-color: #FFE901;
+    border: 4px solid #2981FF;
+    border-radius: 10px;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    transition: all .5s;
+    transform-origin: left;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.menu:hover div:first-child{
+    transform: rotate(45deg);
+    box-shadow: 0px 0px 0px 0px #02187E;
+      /*LE SACAMOS LA SOMBRA PARA QUE SE NOTE MEJOR LA CRUZ!!*/:;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.menu:hover div:nth-child(2){
+    opacity: 0;
+}
+
+.menu:hover div:last-child{
+    transform: rotate(-42deg);
+    box-shadow: 0px 0px 0px 0px #02187E;
+      /*LE SACAMOS LA SOMBRA PARA QUE SE NOTE MEJOR LA CRUZ!!*/:;
+    -webkit-transform: rotate(-42deg);
+    -moz-transform: rotate(-42deg);
+    -ms-transform: rotate(-42deg);
+    -o-transform: rotate(-42deg);
+}
+
+.btnComprar {
+    width: 200px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 111px;
+    border: 8px solid #2982FF;
+    background: #FFE901;
+    /*DropShadow*/box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.8);
+    color: #02187E;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%;
+    /*18.9px*/letter-spacing: 2.2px;
+    margin: 0px 100px 0px 0px;
+    -webkit-text-stroke:2px;
+    cursor: pointer;
+    -webkit-border-radius: 111px;
+    -moz-border-radius: 111px;
+    -ms-border-radius: 111px;
+    -o-border-radius: 111px;
+}
+
+.btnComprar:hover{
+    color: #2981FF;
+    background-color: #dfd956;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.sticky {
+    position: sticky;
+    top: 0px;
+    /*DONDE LO VOY A PEGAR, OSEA DESDE EL INICIO*/
+}
+
+.logo {
+    background-color: transparent;
+    z-index: 51;
+    /*EL LOGO TIENE MAYOR Z-INDEX PORQUE SIEMPRE TIENE QUE ESTAR ARRIBA*/
+    position: absolute;
+    /*PARA COLOCARLO ARRIBA DE LAS NUBES*/
+    top: 100px;
+    left: 32%;
+}
+
+#logo.pequeño {
+    position: fixed;
+    transform: scale(0.3);
+    transform-origin: top left;
+    top: 0px;
+    left: 45%;
+    -webkit-transform: scale(0.3);
+    -moz-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    -o-transform: scale(0.3);
+}
+
+
+.fondoNubes {
+    width: 100%;
+    position: relative;
+}
+
+.fondoNubes img {
+    width: 100%;
+    height: 720px;  /*LE DEJAMOS SU ALTURA ORIGINAL*/
+    margin-top: 0px;
+}
+
+.edificios {
+    display: flex;
+    position: relative;
+    top: -420px;
+    justify-content:center;
+    align-items: baseline;
+    /*Los alineo*/
+    z-index: 1;
+   
+}
+
+.edificios img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.spidermansPortada {
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+}
+
+
+.spideyBlanco {
+    position: relative;
+    top: -870px;
+    left: 50px;
+    z-index: 3;
+    transform: scale(1) translateY(0);
+    transition: .5s linear;
+    -webkit-transform: scale(1) translateY(0);
+    -moz-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    -o-transform: scale(1) translateY(0);
+    -webkit-transition: .5s linear;
+    -moz-transition: .5s linear;
+    -ms-transition: .5s linear;
+    -o-transition: .5s linear;
+
+
+}
+
+.spideyNormal {
+    position: relative;
+    top: -870px;
+    left: 10px;
+    z-index: 10;
+    transition: .5s linear;
+    -webkit-transition: .5s linear;
+    -moz-transition: .5s linear;
+    -ms-transition: .5s linear;
+    -o-transition: .5s linear;
+}
+
+.spideyNegro {
+
+    position: relative;
+    top: -930px;
+    left:-150px ;
+    z-index: 10;
+    transition: .5s linear;
+        -webkit-transition: .5s linear;
+    -moz-transition: .5s linear;
+    -ms-transition: .5s linear;
+    -o-transition: .5s linear;
+
+}
+
+/*================================*/
+
+
+.telarañas {
+    display: flex;
+    z-index: 3;
+    position: relative;    
+}
+
+.telaIzquierda {
+    position: relative;
+    top: -1367px;
+    left: -185px;
+}
+
+.telaDerecha {
+    position: relative;
+    top: -1350px;
+    left: 230px;
+}
+
+.telaIzquierda img,
+.telaDerecha img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/*PARA EL EFECTO PARALLAX DE LA PORTADA CON LOS SPIDEYS*/
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+
+
+.spidermansRecuadrosTexto div p {
+    width: 333px;
+    height: 218px;
+    flex-shrink: 0;
+    color: #000;
+
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*------------------Duende ------------------*/
+
+fondoContenedorDuendeVerde{
+    position: relative;
+    height: 100vh; 
+    overflow-x: hidden;
+    overflow-y: auto; 
+    
+}
+
+.contenedorDuende{
+
+width: 100%;
+position: relative;
+height: 924.5px;
+background-image: url(../img/fondoo.png);
+background-size: 100% 90% ;
+background-repeat: no-repeat;
+z-index: 2;
+margin-top: -80px;
+
+}
+
+
+
+
+
+.rectanguloVioleta {
+    position: relative;
+    top: -1650px;
+    z-index: 1;
+}
+
+.rectanguloVioleta img{
+    width: 100%;
+    height: 844px;
+}
+
+.recVioletaContenido {
+    display: flex;
+    position: absolute;
+    top: 16%;
+    left: 8.6%;
+}
+.edifVerde img{
+    width: auto;
+    height: auto;
+}
+
+.duendeCalabaza {
+    
+    position: absolute;
+    top: 20px;
+    left: 0;
+    
+}
+
+
+.duende{
+    position: absolute;
+    right: -100px;
+    top: -130px;
+    
+    }
+
+
+
+
+.duendeCalabaza img{
+    width: auto;
+    height: auto;
+   }
+
+
+
+
+
+
+/*ACA JUNTAMOS TITULO, PARRAFO E IMAGEN EDIFICIO*/
+
+.imgEdificioYTexto {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgEdificioYTexto p {
+    width: 586px;
+    height: 154px;
+    flex-shrink: 0;
+    color: #FFF;
+    padding-top: 24px;
+    margin-left: 0px;
+
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.fijo .imgEdificioYTexto h2 {
+    width: 646px;
+    color: #FFF;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+    /* 56.7px */
+    margin-left: 0px;
+}
+
+/*RECUADROS SPIDERMANS*/
+
+.contenedorRecuadros {
+    height: 1085px;
+    margin-top: -1400px;
+}
+
+/*ESTAS SON LAS IMAGENES DE LAS CARDS*/
+.spidermansRecuadros {
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.spidermansRecuadros.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.spidermansRecuadros img{
+    width: auto;
+    height: auto;
+}
+
+/*ESTOS SON LOS TEXTOS DE LA CARD*/
+.spidermansRecuadrosTexto {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    padding-left: 30px; ;
+    opacity: 0; /* Establecemos la opacidad inicial en 0 */
+    transform: translateY(30px); /* Movemos los elementos hacia abajo */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Aplicamos transición suave */
+}
+
+.spidermansRecuadrosTexto.visible {
+    opacity: 1; /* Hacemos visible el contenido cuando la clase 'visible' está presente */
+    transform: translateY(0); /* Devolvemos los elementos a su posición original */
+}
+
+
+
+.rectanguloSpidermanBlanco img{
+  width: 100%;
+  height: 566px; /*Tuve que ponerle el tamaño exacto a la img*/
+   margin: -200px; 
+}
+
+.rectanguloSpidermanBlanco {
+    position: relative;
+    top: -250px;
+    left: 200px;
+    display: block;
+}
+
+/* hojas de rutas moviles---------------*/
+
+
+
+.ruta1 {
+    position: relative;
+    top:-770px;
+    left: 50px;
+            
+    }
+
+.ruta1:hover{
+    transform: skewY(7deg);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transform: skewY(7deg);
+    -moz-transform: skewY(7deg);
+    -ms-transform: skewY(7deg);
+    -o-transform: skewY(7deg);
+
+
+
+}
+
+.ruta2 {
+   position: relative;
+   top: -1070px;
+   left: 40px;
+   flex-shrink: 0;
+   }
+
+.ruta2:hover{
+    transform: skewY(7deg);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transform: skewY(7deg);
+    -moz-transform: skewY(7deg);
+    -ms-transform: skewY(7deg);
+    -o-transform: skewY(7deg);
+}
+
+.ruta3 {
+    position: relative;
+    top: -1420px;
+    left: 70px;
+    
+}
+
+.ruta3:hover{
+    transform: skewY(7deg);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transform: skewY(7deg);
+    -moz-transform: skewY(7deg);
+    -ms-transform: skewY(7deg);
+    -o-transform: skewY(7deg);
+
+}
+
+
+
+/*-----------------VENGADORES------------*/
+
+
+.fondoContenedorVengadores {
+    background-color: black;
+    margin-top:-1800px ;  
+    height: 950px;
+}
+
+.contenedorVengadores {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+}
+
+.tituloVengadores {
+    width: 667px;
+    padding-top: 170px;
+    color: #FFF;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+    margin-top: 150px;
+    /* 56.7px */
+}
+
+.nubesVengadores{
+    z-index: 3;
+    position: relative;
+    margin-top: 100px;
+}
+
+.hojasVengadores{
+    z-index: 7;
+    position: relative;
+    top: -531px;
+   
+}
+
+.arbolesVengadores{
+    z-index: 4;
+    position: relative;
+    top: -1050px;
+    margin-top: -13px;
+}
+
+.vengadores {
+    display: flex;
+    position: relative;
+}
+
+.mujerElastica{
+    position: absolute;
+    top: -460px;
+    left: 130px;
+    z-index: 6;
+}
+
+.pumaNegro{
+    position: absolute;
+    z-index: 6;
+    top: -614px;
+    left: 550px;
+}
+
+.hulk{
+    position: absolute;
+    z-index: 6;
+    top: -255px;
+    left: 775px;
+}
+/*-------texto cambiante    -------*/
+
+
+.contenedorTextoCambiante{
+margin-bottom: 200px;
+}
+
+
+.tituloSeccionImgConTexto{
+    padding-top: 200px;
+}
+
+.separador1{
+    position: relative;
+    top: -1240px;
+    left: 0px;
+    width: 1280px;
+    height: 150px;
+    background: #000000;
+    z-index: 0;
+    transform: skewY(5deg);
+    transform-origin: top right;
+}
+
+.separador2{
+    position: relative;
+    top: -20px;
+    left: -100px;
+    width: 1280px;
+    height: 150px;
+    background: #000000;
+    z-index: 0;
+    transform: skewY(5deg);
+    transform-origin: top right;
+}
+
+.separador3{
+    position: relative;
+    top:120px;
+    left:0;
+    margin-left: -100px;
+    width: 1280px;
+    height: 120px;
+    background: #000000;
+    transform: skewY(-5deg);
+    transform-origin: top left;
+}
+
+
+/*EL CONTENEDOR ES ELASTICO LO DE ADENTRO ES FIJO*/
+.fondoContenedorParrafoYBoton {
+    background-color: black;
+}
+
+
+.contenedorParrafoYBoton p {
+    color: #FFF;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 8.1%;
+    padding-right: 28.1%;
+    margin-top: -90px;
+}
+
+.contenedorParrafoYBoton button {
+    border-radius: 111px;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+    width: 292px;
+    height: 50px;
+    /* Drop Shadow */
+    box-shadow: 4px 5px 0px 0px #02187E;
+
+    /* Tipografia*/
+    color: #02187E;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%;
+    /* 18.9px */
+    letter-spacing: 2.2px;
+    margin-left: 110px;
+    margin-top: 40px;
+    -webkit-text-stroke:2px;
+    cursor: pointer;
+}
+
+.contenedorParrafoYBoton button:hover{
+    color: #2981FF;
+    background-color: #dfd956;
+}
+
+
+/*IMAGENES CON TEXTO*/
+
+.seccion-imagenes-con-texto {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 00px;
+}
+
+.seccion-img{
+    width: 550px;
+}
+
+.parrafos{
+    width: 467px;
+}
+
+.textoCambiante h3{
+    padding-bottom: 20px;
+}
+
+.seccion-img img{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.imagen-fija{
+    position: fixed;
+    /*Quedafijalaimagen!!*/top: 150px;
+    transition: opacity 0.5s ease;
+    width: 550px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+}
+.imagen-fija img{
+    width: 100%;
+}
+
+.textoCambiante h3{
+    padding-top: 20px;
+}
+
+.parrafo-oculto {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
+    -moz-transition: opacity 0.5s ease, transform 0.5s ease;
+    -ms-transition: opacity 0.5s ease, transform 0.5s ease;
+    -o-transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.parrafo-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*titulo mas amigos, mas diversion*/
+.fijo h2 {
+    width: 802px;
+    color: #000;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+    /* 56.7px */
+    margin: 50px;
+    margin-left: 0px;
+}
+
+.textoCambiante {
+    padding: 50px;
+}
+
+.textoCambiante h3 {
+    color: #000;
+    font-family: Lato;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 37.8px */
+}
+
+.textoCambiante p {
+    color: #000;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 18.9px */
+}
+
+
+/*-----------los 3 spiderman------------*/
+
+.contenedorSpidermans {
+    position: relative;
+}
+
+.contenedorSpidermans .los3Spidermans > img {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top:180px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+
+.los3Spidermans {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    display: flex;
+    padding-left: 190px;
+    align-items: center;
+}
+
+.blanco{
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.negro{
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.rojo{
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+
+.spider3 .popup {
+    display: none;
+    position: absolute;
+    top: 20px;
+    width: 80%;
+    height: 832px;
+    background-color: black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.popup-text {
+    width: 56%;
+    color: white;
+}
+.spider3 .show {
+    display: flex;
+}
+
+.spider3 .popup > img {
+    width: 284px;
+    height: 717px;
+    margin-left: 0px; 
+}
+
+.spider3 .popup .close {
+    position: absolute;
+    width: 89px;
+    top: -286px;
+    right: 28px;
+    cursor: pointer;
+}
+
+
+
+
+/*---------------correo----------------------------*/
+
+
+.tituloCorreoElectronico {
+    width: 816px;
+    color: #000;
+    text-align: center;
+    font-family: Lato;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 94.5%;
+    /* 56.7px */
+    margin-left: 250px;
+}
+
+.contenedorBuscador {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.buscadorIzquierda {
+    width: 562px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 50px 0px 0px 50px;
+    border-top: 9px solid #2982FF;
+    border-bottom: 9px solid #2982FF;
+    border-left: 9px solid #2982FF;
+    background: #FFF;
+    /*DropShadow*/box-shadow: 4px 5px 0px 0px #02187E;
+    margin-right: 0px;
+    -webkit-border-radius: 50px 0px 0px 50px;
+    -moz-border-radius: 50px 0px 0px 50px;
+    -ms-border-radius: 50px 0px 0px 50px;
+    -o-border-radius: 50px 0px 0px 50px;
+}
+
+.buscadorDerecha {
+    width: 218px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 0px 50px 50px 0px;
+    border: 9px solid #2982FF;
+    background: #FFE901;
+    /*DropShadow*/box-shadow: 4px 5px 0px 0px #02187E;
+    color: #02187E;
+    cursor: pointer;
+    -webkit-text-stroke:2px;
+    -webkit-border-radius: 0px 50px 50px 0px;
+    -moz-border-radius: 0px 50px 50px 0px;
+    -ms-border-radius: 0px 50px 50px 0px;
+    -o-border-radius: 0px 50px 50px 0px;
+}
+
+.buscadorDerecha:hover{
+    color: #2981FF;
+    background-color: #dfd956;
+}
+
+.fijo .buscadorIzquierda p {
+    color: rgba(0, 0, 0, 0.39);
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 18.9px */
+    letter-spacing: 2.2px;
+    margin-top: 41px;
+    margin-right: 250px;
+}
+
+.buscadorDerecha P {
+    /*Tipografia*/
+    font-family: Lato;
+    font-size: 20px;
+    font-style: bold;
+    font-weight: 900;
+    line-height: 94.5%;
+    /* 18.9px */
+    letter-spacing: 2.2px;
+    text-align: center;
+    margin-top: 41px;
+}
+
+.fijo .parrafoCorreo {
+    width: 578px;
+    height: 95px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    justify-content: center;
+    text-align: start;
+    margin-left: 330px;
+}
+
+.fijo .parrafoCorreo p {
+    color: #000;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 18.9px */
+}
+
+.fijo .parrafoCorreo span {
+    color: #000;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    text-decoration-line: underline;
+}
+
+.fondoCieloInferior{
+    position: relative;
+}
+
+.fondoCieloInferior img{
+    width: 100%;
+    
+}
+
+ .suscripcion{
+    position: absolute;
+    top: 8%;
+}
+
+.fondoEdificiosInferior{
+    position: absolute;
+    top: 44.5%;
+    left: 0px; 
+    width: 100%;
+}
+
+.fondoEdificiosInferior img{
+    width: 100%;
+}
+
+.teen{
+    position: absolute;
+    top: 100%;
+    left: 31%;
+}
+
+.lineaSuperiorFooter {
+    height: 80px;
+    background-color: #242424;
+}
+
+.lineaSuperiorFooter div {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.footerFondoGris {
+    height: 598px;
+    background-color: #5E5E5D;
+}
+
+.textoFooter {
+    width: 820px;
+    height: 361px;
+    padding-left: 100px;
+    padding-top: 38px;
+    padding-right: 360px;
+    padding-bottom: 199px;
+}
+
+.textoFooter .p1 {
+    color: #FFF;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    /* 18.9px */
+    letter-spacing: 2.2px;
+}
+
+.textoFooter .p2 {
+    color: #FFF;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 94.5%;
+    letter-spacing: 2.2px;
+    text-decoration-line: underline;
+    margin-top: 20px;
+}
+
+.textoFooter div {
+    padding-top: 38px;
+
+}
+
+/* --------------seccion spritesheet-------------*/
+
+/*PARA QUE NO QUEDE UN ESPACIO EN BLANCO ENTRE EDIFICIOS Y FOOTER*/
+  .sectionSprite{
+    height: 0px;
+  }
+  
+  .abs {
+    position: relative;
+    bottom: -714px;
+  }
+  
+  #sp_1 {
+    z-index: 8;
+    transform: scale(1.5);
+    position: relative;
+    bottom: 230px;
+    left: 572px;
+    width: 40px;
+    height: 65px;
+    background-image: url("../img/spideySprit.png ");
+    background-repeat: repeat-x;
+    animation: climb 2.5s steps(7) infinite;
+    -webkit-animation: climb 2.5s steps(7) infinite;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+  }
+ 
+  
+  @keyframes climb {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: -280px;
+    }
+  }
+  
+  
+  @keyframes climb {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: -280px;
+    }
+  }
+  
+  
+  .sectionSprite .width-1080 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
